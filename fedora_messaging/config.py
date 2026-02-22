@@ -523,11 +523,9 @@ def validate_bindings(bindings: BindingsType) -> None:
             )
 
         if not isinstance(binding["routing_keys"], (list, tuple)):
-            raise exceptions.ConfigurationException(
-                "routing_keys must be a list or tuple, but was a {}".format(
-                    type(binding["routing_keys"])
-                )
-            )
+           raise exceptions.ConfigurationException(
+             f"routing_keys must be a list or tuple, but was a {type(binding['routing_keys'])}"
+        )
 
 
 def validate_queues(queues: dict[str, QueueConfig]) -> None:
